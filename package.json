@@ -1,0 +1,21 @@
+{
+  "name": "games-sockets-platform",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "author": "jrtls",
+  "scripts": {
+    "dev": "concurrently \"yarn dev:server\" \"yarn dev:client\"",
+    "dev:server": "yarn --cwd ./server start",
+    "dev:client": "yarn --cwd ./client start",
+    "build": "gulp"
+  },
+  "type": "module",
+  "license": "MIT",
+  "devDependencies": {
+    "concurrently": "^7.6.0",
+    "del": "^7.0.0",
+    "execa": "^6.1.0",
+    "gulp": "^4.0.2"
+  },
+  "dependencies": {}
+}
