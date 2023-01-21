@@ -3,11 +3,12 @@
   "version": "1.0.0",
   "author": "jrtls",
   "scripts": {
-    "start": "pm2 start dist/index.js",
+    "install:all": "yarn install && yarn --cwd ./client install && yarn --cwd ./server install",
+    "build": "gulp",
     "dev:server": "yarn --cwd ./server start",
     "dev:client": "yarn --cwd ./client start",
     "dev": "concurrently \"yarn dev:server\" \"yarn dev:client\"",
-    "build": "gulp"
+    "start:production": "pm2 start dist/index.js"
   },
   "license": "MIT",
   "devDependencies": {

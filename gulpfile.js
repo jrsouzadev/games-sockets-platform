@@ -111,13 +111,13 @@ gulp.task("build_client", async function () {
 
 gulp.task("copy_server", async function () {
   await gulp
-    .src(["./server/dist/*.*", "./server/dist/**/*.*"])
+    .src(["./server/dist/**.*", "./server/dist/**/**.*"])
     .pipe(gulp.dest("./dist"));
 });
 
 gulp.task("copy_client", async function () {
   await gulp
-    .src(["./client/build/*.*", "./client/build/**/*.*"])
+    .src(["./client/build/**.*", "./client/build/**/**.*"])
     .pipe(gulp.dest("./dist/public"));
 });
 
