@@ -4,7 +4,7 @@
   "author": "jrtls",
   "scripts": {
     "install:all": "yarn install && yarn --cwd ./client install && yarn --cwd ./server install",
-    "build": "gulp",
+    "build": "gulp clean && gulp build && gulp copy",
     "dev:server": "yarn --cwd ./server start",
     "dev:client": "yarn --cwd ./client start",
     "dev": "concurrently \"yarn dev:server\" \"yarn dev:client\"",
