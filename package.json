@@ -7,7 +7,7 @@
     "dev:server": "yarn --cwd ./server start",
     "dev:client": "yarn --cwd ./client start",
     "dev": "concurrently \"yarn dev:server\" \"yarn dev:client\"",
-    "build": "gulp --help"
+    "build": "gulp"
   },
   "license": "MIT",
   "devDependencies": {
