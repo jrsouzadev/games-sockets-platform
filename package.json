@@ -3,22 +3,20 @@
   "version": "1.0.0",
   "author": "jrtls",
   "scripts": {
-    "initialize": "yarn install:all && yarn build",
     "install:all": "yarn install && yarn --cwd ./client install && yarn --cwd ./server install",
     "build": "gulp clean && gulp build && gulp copy",
+    "initialize": "yarn install:all && yarn build",
     "dev:server": "yarn --cwd ./server start",
     "dev:client": "yarn --cwd ./client start",
     "dev": "concurrently \"yarn dev:server\" \"yarn dev:client\"",
-    "start:production": "pm2 start dist/index.js"
+    "start": "node dist/index.js"
   },
   "license": "MIT",
   "devDependencies": {
     "concurrently": "^7.6.0",
     "del": "^7.0.0",
     "execa": "^6.1.0",
-    "gulp": "^4.0.2",
-    "nodemon": "^2.0.20",
-    "pm2": "^5.2.2"
+    "gulp": "^4.0.2"
   },
   "dependencies": {}
 }
