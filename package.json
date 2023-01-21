@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "author": "jrtls",
   "scripts": {
+    "initialize": "yarn install:all && yarn build",
     "install:all": "yarn install && yarn --cwd ./client install && yarn --cwd ./server install",
     "build": "gulp clean && gulp build && gulp copy",
     "dev:server": "yarn --cwd ./server start",
