@@ -11,7 +11,6 @@ const app = express();
 const port = process.env.PORT || 3333;
 
 const production = process.env.NODE_ENV === 'production'
-console.log(process.env.NODE_ENV)
 
 if (production) {
   app.use(express.static(path.join(__dirname, 'public')))
