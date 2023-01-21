@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "author": "jrtls",
   "scripts": {
-    "run-build": "nodemon dist/index.js",
+    "start": "pm2 start dist/index.js",
     "dev:server": "yarn --cwd ./server start",
     "dev:client": "yarn --cwd ./client start",
     "dev": "concurrently \"yarn dev:server\" \"yarn dev:client\"",
@@ -15,7 +15,8 @@
     "del": "^7.0.0",
     "execa": "^6.1.0",
     "gulp": "^4.0.2",
-    "nodemon": "^2.0.20"
+    "nodemon": "^2.0.20",
+    "pm2": "^5.2.2"
   },
   "dependencies": {}
 }
