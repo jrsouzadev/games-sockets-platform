@@ -13,10 +13,15 @@
   },
   "license": "MIT",
   "devDependencies": {
+    "@types/styled-components": "^5.1.26",
     "concurrently": "^7.6.0",
     "del": "^7.0.0",
     "execa": "^6.1.0",
     "gulp": "^4.0.2"
   },
-  "dependencies": {}
+  "dependencies": {
+    "polished": "^4.2.2",
+    "react-router-dom": "^6.7.0",
+    "styled-components": "^5.3.6"
+  }
 }

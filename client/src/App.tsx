@@ -1,37 +1,37 @@
 import React, { useState, useEffect } from "react";
-import { io } from "socket.io-client";
+import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import { ChatApp } from "./apps";
+import Home from "./home";
 
-const socket = io();
+import { GlobalStyle, Navigation, NavItem, Main } from "./styles";
+import AppStateProvider from "./state";
 
 function App() {
-  const [connection, setConnection] = useState(socket.connected);
-
-  useEffect(() => {
-    socket.on("connect", () => {
-      console.log(`Socket connected. Id: ${socket.id}`);
-      socket.emit("I am alive!");
-      setConnection(true);
-    });
-  });
-
   return (
-    <div
-      style={{
-        backgroundColor: "pink",
-        width: "100rem",
-        height: "100rem",
-        padding: "200px",
-      }}
-    >
-      <header>
-        <p style={{ fontSize: "30px" }}>
-          <strong>Welcome. Hello world!</strong> by João Ricardo
-        </p>
-        <p style={{ fontSize: "30px" }}>
-          <strong>Socket connected: </strong> {connection ? "ON" : "OFF"}
-        </p>
-      </header>
-    </div>
+    <>
+      <GlobalStyle />
+
+      <BrowserRouter>
+        <AppStateProvider>
+          <>
+            <Navigation>
+              <NavItem>
+                <Link to="/">Home</Link>
+              </NavItem>
+              <NavItem>
+                <Link to="/chat">Chat</Link>
+              </NavItem>
+            </Navigation>
+            <Main>
+              <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/chat" element={<ChatApp />} />
+              </Routes>
+            </Main>
+          </>
+        </AppStateProvider>
+      </BrowserRouter>
+    </>
   );
 }
 
